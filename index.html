@@ -31,50 +31,56 @@ margin-top: 10%;
  }
 
 </style>
-  <script>
-    function calculate(numEntered) {
-      var answerField = document.getElementById('answer');
+<script>
+  function calculate(numEntered) {
+    var answerField = document.getElementById('answer');
 
-      if (numEntered === 'C') {
-        answerField.value = '';
-      } else if (numEntered === '=') {
-        try {
-          answerField.value = eval(answerField.value);
-        } catch (error) {
-          answerField.value = 'Error';
-        }
-      } else {
-        answerField.value += numEntered;
+    if (numEntered === 'C') {
+      answerField.value = '';
+    } else if (numEntered === '=') {
+      try {
+        answerField.value = eval(answerField.value);
+      } catch (error) {
+        answerField.value = 'Error';
       }
+    } else {
+      answerField.value += numEntered;
     }
-  </script>
+  }
+</script>
 </head>
 <body>
-  <table>
-    <tbody>
-      <tr>
-        <td colspan="3"><input type="text" id="answer" disabled /></td>
-        <td id="butt" onclick="calculate('C')">C</td>
-      </tr>
-      <tr>
-        <td onclick="calculate('1')">1</td>
-        <td onclick="calculate('2')">2</td>
-        <td onclick="calculate('3')">3</td>
-        <td id="butt" onclick="calculate('+')">+</td>
-      </tr>
-      <tr>
-        <td onclick="calculate('4')">4</td>
-        <td onclick="calculate('5')">5</td>
-        <td onclick="calculate('6')">6</td>
-        <td id="butt" onclick="calculate('-')">-</td>
-      </tr>
-      <tr>
-        <td onclick="calculate('7')">7</td>
-        <td onclick="calculate('8')">8</td>
-        <td onclick="calculate('9')">9</td>
-        <td id="butt" onclick="calculate('=')">=</td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><input type="text" id="answer" disabled /></td>
+      <td id="butt" onclick="calculate('C')">C</td>
+    </tr>
+    <tr>
+      <td onclick="calculate('1')">1</td>
+      <td onclick="calculate('2')">2</td>
+      <td onclick="calculate('3')">3</td>
+      <td id="butt" onclick="calculate('+')">+</td>
+    </tr>
+    <tr>
+      <td onclick="calculate('4')">4</td>
+      <td onclick="calculate('5')">5</td>
+      <td onclick="calculate('6')">6</td>
+      <td id="butt" onclick="calculate('-')">-</td>
+    </tr>
+    <tr>
+      <td onclick="calculate('7')">7</td>
+      <td onclick="calculate('8')">8</td>
+      <td onclick="calculate('9')">9</td>
+      <td id="butt" onclick="calculate('*')">*</td>
+    </tr>
+    <tr>
+      <td onclick="calculate('0')">0</td>
+      <td onclick="calculate('.')">.</td>
+      <td id="butt" onclick="calculate('/')">/</td>
+      <td id="butt" onclick="calculate('=')">=</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
